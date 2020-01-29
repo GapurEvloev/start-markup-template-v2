@@ -3,7 +3,7 @@
 ## Особенности
 * именование классов по [БЭМ](https://ru.bem.info/)
 * используется БЭМ-структура
-* используются препроцессоры [Pug](https://pugjs.org/) и [SCSS](https://sass-lang.com/)
+* используются препроцессоры [Pug](https://pugjs.org/) и [Stylus](http://stylus-lang.com/)
 * используется транспайлер [Babel](https://babeljs.io/) для поддержки современного JavaScript (ES6) в браузерах
 * используется [Webpack](https://webpack.js.org/) для сборки JavaScript-модулей
 * используется CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) на основе Bootstrap для быстрой адаптивной вёрстки
@@ -61,20 +61,20 @@ gulp-pug-starter
     * изображения: ```src/img```
     * JS-файлы: ```src/js```
     * страницы сайта: ```src/views/pages```
-    * SCSS-файлы: ```src/styles```
+    * Stylus-файлы: ```src/styles```
     * служебные Pug-файлы: ```src/views```
     * конфигурационный файл веб-сервера Apache с настройками [gzip](https://habr.com/ru/post/221849/) (сжатие без потерь): ```src/.htaccess```
 * Папка ```dist``` - папка, из которой запускается локальный сервер для разработки (при запуске ```yarn run dev```)
 * Папка ```gulp-tasks``` - папка с Gulp-тасками
 
 ## Команды
-* ```yarn run lint:style``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
+* ```yarn run lint:style``` - проверить Stylus-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
 или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла)
-* ```yarn run lint:style --fix``` - исправить ошибки в SCSS-файлах
+* ```yarn run lint:style --fix``` - исправить ошибки в Stylus-файлах
 * ```yarn run dev``` - запуск сервера для разработки проекта
 * ```yarn run build``` - собрать проект с оптимизацией без запуска сервера
 * ```yarn run build:views``` - скомпилировать Pug-файлы
-* ```yarn run build:styles``` - скомпилировать SCSS-файлы
+* ```yarn run build:styles``` - скомпилировать Stylus-файлы
 * ```yarn run build:scripts``` - собрать JS-файлы
 * ```yarn run build:images``` - собрать изображения
 * ```yarn run build:webp``` - сконвертировать изображения в формат ```.webp```
@@ -86,9 +86,9 @@ gulp-pug-starter
 ## Рекомендации по использованию
 ### Компонентный подход к разработке сайтов
 * каждый БЭМ-блок имеет свою папку внутри ```src/blocks/modules```
-* папка одного БЭМ-блока содержит в себе один Pug-файл, один SCSS-файл и один JS-файл (если у блока используется скрипт)
+* папка одного БЭМ-блока содержит в себе один Pug-файл, один Stylus-файл и один JS-файл (если у блока используется скрипт)
     * Pug-файл блока импортируется в файл ```src/views/index.pug``` (или в необходимый файл страницы, откуда будет вызываться блок)
-    * SCSS-файл блока импортируется в файл ```src/blocks/modules/_modules.scss```
+    * Stylus-файл блока импортируется в файл ```src/blocks/modules/_modules.stylus```
     * JS-файл блока импортируется в ```src/js/import/modules.js```
 
 Пример структуры папки с БЭМ-блоком:
@@ -98,7 +98,7 @@ blocks
 │   ├── header
 │   │   ├── header.pug
 │   │   ├── header.js
-│   │   ├── header.scss
+│   │   ├── header.stylus
 ```
 Чтобы вручную не создавать соответствующие папку и файлы, достаточно в консоли прописать следующие команды:
 * ```bem create my-block``` - для создания папки БЭМ-блока, где ```my-block``` - имя БЭМ-блока
@@ -108,9 +108,9 @@ blocks
 ### Компоненты
 * компоненты (например, иконки, кнопки) оформляются в Pug с помощью примесей
 * каждый компонент имеет свою папку внутри ```src/blocks/components```
-* папка одного компонента содержит в себе один Pug-файл, один SCSS-файл и один JS-файл (если у компонента используется скрипт)
+* папка одного компонента содержит в себе один Pug-файл, один Stylus-файл и один JS-файл (если у компонента используется скрипт)
     * Pug-файл компонента импортируется в файл главной страницы ```src/views/index.pug``` (или в необходимый файл страницы, откуда будет вызываться компонент)
-    * SCSS-файл компонента импортируется в файл ```src/blocks/components/_components.scss```
+    * Stylus-файл компонента импортируется в файл ```src/blocks/components/_components.stylus```
     * JS-файл компонента импортируется в файл ```src/js/import/components.js```
 
 ### Страницы проекта
@@ -121,7 +121,7 @@ blocks
 ### Шрифты
 * шрифты находятся в папке ```src/fonts```
     * используйте [форматы](https://caniuse.com/#search=woff) ```.woff``` и ```.woff2```
-    * шрифты подключаются в файл ```src/styles/layout/_fonts.scss```
+    * шрифты подключаются в файл ```src/styles/layout/_fonts.stylus```
     * сконвертировать локальные шрифты можно с помощью [данного сервиса](https://onlinefontconverter.com/)
 
 ### Изображения
@@ -136,7 +136,7 @@ blocks
     ```javascript
     import $ from "jquery";
     ```
-    * для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/vendor/_libs.scss```
+    * для подключения стилевых файлов библиотек импортируйте их в файл ```src/styles/vendor/_libs.stylus```
     * JS-файлы и стилевые файлы библиотек самостоятельно изменять нельзя
 
 :warning: Если в вашем проекте используется несколько библиотек, которые необходимо подключать на нескольких страницах, во избежании ошибок нужно:
@@ -155,7 +155,7 @@ entry: {
 
 ## CSS-сетка smart-grid
 В сборщик включена CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) от [Дмитрия Лаврика](https://dmitrylavrik.ru/). Она позволяет избавиться от
-лишних классов в разметке за счёт использования примесей в SCSS и ускоряет адаптивную вёрстку. Конфигурация уже настроена в соответствии с сеткой [Bootstrap](https://getbootstrap.com/). Пример использования:
+лишних классов в разметке за счёт использования примесей в Stylus и ускоряет адаптивную вёрстку. Конфигурация уже настроена в соответствии с сеткой [Bootstrap](https://getbootstrap.com/). Пример использования:
 
 **Stylus**
 ```stylus
