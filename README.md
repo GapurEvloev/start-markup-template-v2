@@ -40,8 +40,6 @@ gulp-pug-starter
 ├── .babelrc.js
 ├── .bemrc.js
 ├── .eslintrc.json
-├── .stylelintrc
-├── .stylelintignore
 └── .gitignore
 ```
 
@@ -50,8 +48,8 @@ gulp-pug-starter
     * ```.bemrc.js``` — настройки БЭМ
     * ```.eslintrc.json``` — настройки ESLint
     * ```.gitignore``` – запрет на отслеживание файлов Git'ом
-    * ```.stylelintrc``` — настройки Stylelint
-    * ```.stylelintignore``` – запрет на отслеживание файлов Stylelint'ом
+    <!-- * ```.stylelintrc``` — настройки Stylelint -->
+    <!-- * ```.stylelintignore``` – запрет на отслеживание файлов Stylelint'ом -->
     * ```gulpfile.babel.js``` — настройки Gulp
     * ```webpack.config.js``` — настройки Webpack
     * ```package.json``` — список зависимостей
@@ -68,8 +66,8 @@ gulp-pug-starter
 * Папка ```gulp-tasks``` - папка с Gulp-тасками
 
 ## Команды
-* ```yarn run lint:style``` - проверить Stylus-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
-или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла)
+<!-- * ```yarn run lint:style``` - проверить Stylus-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
+или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла) -->
 * ```yarn run lint:style --fix``` - исправить ошибки в Stylus-файлах
 * ```yarn run dev``` - запуск сервера для разработки проекта
 * ```yarn run build``` - собрать проект с оптимизацией без запуска сервера
