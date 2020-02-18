@@ -17,11 +17,12 @@
         "build:webp": "gulp webp --production",
         "build:sprites": "gulp sprites --production",
         "build:fonts": "gulp fonts --production",
+        "build:video": "gulp video --production",
         "build:favicons": "gulp favicons --production",
         "build:gzip": "gulp gzip --production",
         "precommit": "lint-staged",
         "prettify": "prettier --write \"**/*.{js,json,jsx,ts,css,less,scss,md,markdown}\"",
-        "prettify:stylus": "stylus-supremacy format ./src/**/*.styl --replace --options ./stylus-supremacy.config.json"
+            "prettify:stylus": "stylus-supremacy format ./src/**/**/**/*.styl ./src/**/**/*.styl ./src/**/*.styl --replace --options ./stylus-supremacy.config.json"
     },
     "lint-staged": {
         "*.{js,json,jsx,ts,tsx,css,less,scss,md,markdown}": [
