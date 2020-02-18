@@ -1,5 +1,4 @@
 include ../helpers/mixins
-include counters
 block variables
 
 doctype html
@@ -30,8 +29,7 @@ html(lang="ru-RU" class="no-js")
 		link(rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon-180x180.png")
 		link(rel="apple-touch-icon" sizes="1024x1024" href="../img/favicons/apple-touch-icon-1024x1024.png")
 		link(rel="stylesheet" href="../styles/main.css")
-		link(href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet")
-		+counters()
+
 	body
 		.wrapper
 			include ../../blocks/modules/header/header
